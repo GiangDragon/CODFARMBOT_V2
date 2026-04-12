@@ -11,7 +11,7 @@ while (a <= NUM_ACCOUNT) :
     change_account(a)
     c = 1
     while (c <= 5) :
-        if(Acc[1][c - 1] != "null") :
+        if(Acc[a][c - 1] != "null") :
             clear_popup()
             farm(Acc[a][c - 1])
         if(c < 5) :
