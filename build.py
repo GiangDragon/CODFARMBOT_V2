@@ -9,10 +9,9 @@ def create_venv():
         subprocess.check_call([sys.executable, "-m", "venv", VENV_DIR])
 
 def install_packages():
-    pip_path = os.path.join(VENV_DIR, "Scripts", "pip.exe")  # Windows
-
-    subprocess.check_call([pip_path, "install", "--upgrade", "pip"])
-    subprocess.check_call([pip_path, "install", "-r", "requirements.txt"])
+    python_path = os.path.join(VENV_DIR, "Scripts", "python.exe")
+    subprocess.check_call([python_path, "-m", "pip", "install", "--upgrade", "pip"])
+    subprocess.check_call([python_path, "-m", "pip", "install", "-r", "requirements.txt"])
 
 if __name__ == "__main__":
     create_venv()
